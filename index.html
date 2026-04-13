@@ -1,0 +1,1044 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vijay Girish – Senior Business Analyst</title>
+  <meta name="description" content="Portfolio of Vijay Girish – Senior Business Analyst specializing in product analytics, FMCG data strategy, SQL, Power BI, and stakeholder management." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --blue: #185FA5;
+      --blue-dark: #0C447C;
+      --blue-light: #E6F1FB;
+      --blue-mid: #B5D4F4;
+      --text-primary: #1a1a1a;
+      --text-secondary: #555;
+      --text-muted: #888;
+      --bg: #f5f5f3;
+      --bg-card: #ffffff;
+      --bg-secondary: #f0eeea;
+      --border: rgba(0,0,0,0.1);
+      --radius: 14px;
+      --radius-sm: 8px;
+    }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--bg);
+      color: var(--text-primary);
+      line-height: 1.7;
+      font-size: 15px;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    nav {
+      background: var(--bg-card);
+      border-bottom: 0.5px solid var(--border);
+      position: sticky; top: 0; z-index: 100;
+      padding: 0.75rem 0;
+    }
+    .nav-inner {
+      max-width: 940px; margin: 0 auto; padding: 0 1.5rem;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .nav-logo { font-size: 15px; font-weight: 600; }
+    .nav-links { display: flex; gap: 1.5rem; }
+    .nav-links a { font-size: 13px; color: var(--text-secondary); cursor: pointer; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--text-primary); }
+
+    .container { max-width: 940px; margin: 0 auto; padding: 0 1.5rem; }
+
+    /* HERO */
+    .hero { background: var(--bg-card); border-bottom: 0.5px solid var(--border); padding: 4rem 0 3rem; }
+    .hero-inner {
+      max-width: 940px; margin: 0 auto; padding: 0 1.5rem;
+      display: flex; align-items: center; gap: 2rem; flex-wrap: wrap;
+    }
+    .avatar {
+      width: 80px; height: 80px; border-radius: 50%;
+      background: var(--blue-light);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 22px; font-weight: 600; color: var(--blue); flex-shrink: 0;
+    }
+    .hero h1 { font-family: 'DM Serif Display', serif; font-size: 32px; font-weight: 400; margin-bottom: 4px; }
+    .hero .subtitle { font-size: 14px; color: var(--text-secondary); margin-bottom: 12px; }
+    .tags { display: flex; flex-wrap: wrap; gap: 8px; }
+    .tag {
+      font-size: 12px; padding: 3px 10px; border-radius: 20px;
+      background: var(--bg-secondary); border: 0.5px solid var(--border); color: var(--text-secondary);
+    }
+    .contact-strip { display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 1rem; }
+    .contact-item { font-size: 13px; color: var(--text-secondary); }
+    .contact-item a { color: var(--blue); }
+
+    /* SECTIONS */
+    .section-white { background: var(--bg-card); border-top: 0.5px solid var(--border); border-bottom: 0.5px solid var(--border); }
+    .section-gray { background: var(--bg); }
+    section { padding: 2.5rem 0; }
+    .section-label {
+      font-size: 11px; font-weight: 600; letter-spacing: 0.09em;
+      text-transform: uppercase; color: var(--text-muted); margin-bottom: 1.5rem;
+    }
+
+    /* METRICS */
+    .metrics { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px,1fr)); gap: 12px; margin-top: 1.5rem; }
+    .metric-card { background: var(--bg-secondary); border-radius: var(--radius-sm); padding: 1rem; }
+    .metric-num { font-size: 22px; font-weight: 600; color: var(--blue); }
+    .metric-label { font-size: 12px; color: var(--text-muted); margin-top: 2px; }
+
+    /* EXPERIENCE */
+    .exp-list { display: flex; flex-direction: column; gap: 1.25rem; }
+    .exp-card {
+      background: var(--bg-card); border: 0.5px solid var(--border);
+      border-radius: var(--radius); padding: 1.25rem;
+    }
+    .exp-header {
+      display: flex; align-items: flex-start; justify-content: space-between;
+      gap: 1rem; flex-wrap: wrap; margin-bottom: 0.75rem;
+    }
+    .exp-title { font-size: 15px; font-weight: 600; }
+    .exp-company { font-size: 13px; color: var(--text-secondary); margin-top: 2px; }
+    .exp-date {
+      font-size: 12px; color: var(--text-muted); white-space: nowrap;
+      padding: 2px 10px; background: var(--bg-secondary); border-radius: 20px; height: fit-content;
+    }
+    .exp-bullets { list-style: none; padding: 0; }
+    .exp-bullets li {
+      font-size: 13px; color: var(--text-secondary);
+      padding: 3px 0 3px 16px; position: relative; line-height: 1.65;
+    }
+    .exp-bullets li::before {
+      content: ""; width: 5px; height: 5px; border-radius: 50%;
+      background: var(--blue); position: absolute; left: 0; top: 10px;
+    }
+
+    /* ───── PROJECT CARDS ───── */
+    .proj-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1.25rem;
+    }
+
+    .proj-card {
+      background: var(--bg-card);
+      border: 0.5px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      cursor: pointer;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      display: flex;
+      flex-direction: column;
+    }
+    .proj-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 40px rgba(0,0,0,0.1);
+    }
+
+    /* coloured illustration banner */
+    .proj-banner {
+      height: 160px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+    .proj-banner svg { width: 100%; height: 100%; position: absolute; inset: 0; }
+    .proj-banner-icon {
+      font-size: 42px;
+      position: relative;
+      z-index: 1;
+      filter: drop-shadow(0 2px 8px rgba(0,0,0,0.15));
+    }
+
+    .proj-body { padding: 1.1rem 1.25rem 1.25rem; flex: 1; display: flex; flex-direction: column; gap: 6px; }
+    .proj-title { font-size: 14px; font-weight: 600; }
+    .proj-tools { font-size: 12px; color: var(--blue); }
+    .proj-snippet { font-size: 13px; color: var(--text-secondary); line-height: 1.6; flex: 1; }
+    .proj-impact-pill {
+      display: inline-block; margin-top: 6px;
+      font-size: 12px; font-weight: 500;
+      padding: 4px 10px;
+      background: var(--blue-light); color: var(--blue-dark);
+      border-radius: 20px;
+    }
+    .proj-cta {
+      font-size: 12px; color: var(--blue); font-weight: 500;
+      margin-top: 8px; display: flex; align-items: center; gap: 4px;
+    }
+    .proj-cta::after { content: "→"; transition: transform 0.2s; }
+    .proj-card:hover .proj-cta::after { transform: translateX(4px); }
+
+    /* ───── MODAL ───── */
+    .modal-backdrop {
+      position: fixed; inset: 0; z-index: 999;
+      background: rgba(10,18,28,0.55);
+      backdrop-filter: blur(4px);
+      display: flex; align-items: center; justify-content: center;
+      padding: 1.5rem;
+      opacity: 0; pointer-events: none;
+      transition: opacity 0.25s ease;
+    }
+    .modal-backdrop.open { opacity: 1; pointer-events: all; }
+
+    .modal {
+      background: var(--bg-card);
+      border-radius: 18px;
+      width: 100%; max-width: 680px;
+      max-height: 90vh;
+      overflow-y: auto;
+      transform: translateY(24px) scale(0.97);
+      transition: transform 0.25s ease;
+      position: relative;
+    }
+    .modal-backdrop.open .modal { transform: translateY(0) scale(1); }
+
+    .modal-banner {
+      height: 200px;
+      border-radius: 18px 18px 0 0;
+      display: flex; align-items: center; justify-content: center;
+      position: relative; overflow: hidden; flex-shrink: 0;
+    }
+    .modal-banner svg { width: 100%; height: 100%; position: absolute; inset: 0; }
+    .modal-banner-icon {
+      font-size: 64px; position: relative; z-index: 1;
+      filter: drop-shadow(0 4px 12px rgba(0,0,0,0.2));
+    }
+
+    .modal-close {
+      position: absolute; top: 14px; right: 16px; z-index: 10;
+      width: 32px; height: 32px; border-radius: 50%;
+      background: rgba(255,255,255,0.85);
+      border: none; cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 16px; color: #333;
+      transition: background 0.15s;
+    }
+    .modal-close:hover { background: #fff; }
+
+    .modal-body { padding: 1.75rem 2rem 2rem; }
+    .modal-title { font-family: 'DM Serif Display', serif; font-size: 24px; font-weight: 400; margin-bottom: 4px; }
+    .modal-tools { font-size: 13px; color: var(--blue); margin-bottom: 1.25rem; }
+
+    .modal-section-title {
+      font-size: 11px; font-weight: 600; letter-spacing: 0.08em;
+      text-transform: uppercase; color: var(--text-muted); margin-bottom: 8px; margin-top: 1.25rem;
+    }
+    .modal-text { font-size: 14px; color: var(--text-secondary); line-height: 1.75; }
+    .modal-list { list-style: none; padding: 0; margin: 0; }
+    .modal-list li {
+      font-size: 14px; color: var(--text-secondary); line-height: 1.65;
+      padding: 4px 0 4px 18px; position: relative;
+    }
+    .modal-list li::before {
+      content: ""; width: 5px; height: 5px; border-radius: 50%;
+      background: var(--blue); position: absolute; left: 0; top: 11px;
+    }
+    .modal-metrics {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+      gap: 10px; margin-top: 1.25rem;
+    }
+    .modal-metric {
+      background: var(--bg-secondary); border-radius: var(--radius-sm);
+      padding: 0.85rem; text-align: center;
+    }
+    .modal-metric-num { font-size: 20px; font-weight: 600; color: var(--blue); }
+    .modal-metric-label { font-size: 11px; color: var(--text-muted); margin-top: 2px; }
+
+    .modal-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; }
+    .modal-tag {
+      font-size: 12px; padding: 3px 10px; border-radius: 20px;
+      background: var(--blue-light); color: var(--blue-dark);
+      border: 0.5px solid var(--blue-mid);
+    }
+
+    /* SKILLS */
+    .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px,1fr)); gap: 1.25rem; }
+    .skill-group { background: var(--bg-card); border: 0.5px solid var(--border); border-radius: var(--radius); padding: 1.25rem; }
+    .skill-group-title { font-size: 13px; font-weight: 600; color: var(--blue); margin-bottom: 10px; }
+    .skill-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+    .skill-tag {
+      font-size: 12px; padding: 3px 8px; border-radius: var(--radius-sm);
+      background: var(--bg-secondary); color: var(--text-secondary); border: 0.5px solid var(--border);
+    }
+
+    /* CTA */
+    .cta { background: var(--bg-card); border-top: 0.5px solid var(--border); padding: 3rem 0; text-align: center; }
+    .cta h2 { font-family: 'DM Serif Display', serif; font-size: 28px; font-weight: 400; margin-bottom: 8px; }
+    .cta p { font-size: 14px; color: var(--text-secondary); margin-bottom: 1.5rem; }
+    .cta-btns { display: flex; justify-content: center; flex-wrap: wrap; gap: 12px; }
+    .btn {
+      font-size: 13px; padding: 9px 22px; border-radius: var(--radius-sm);
+      border: 0.5px solid var(--border); background: var(--bg-card);
+      cursor: pointer; font-family: 'DM Sans', sans-serif; color: var(--text-primary);
+      transition: background 0.15s;
+    }
+    .btn:hover { background: var(--bg-secondary); }
+    .btn-primary { background: var(--blue); color: #fff; border-color: var(--blue); }
+    .btn-primary:hover { background: var(--blue-dark); }
+
+    /* HOBBIES */
+    .hobbies-grid {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+      gap: 12px; margin-top: 0.5rem;
+    }
+    .hobby-card {
+      background: var(--bg-card); border: 0.5px solid var(--border);
+      border-radius: var(--radius); padding: 1.1rem 1rem;
+      text-align: center; transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .hobby-card:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(0,0,0,0.08); }
+    .hobby-emoji { font-size: 30px; margin-bottom: 8px; }
+    .hobby-name { font-size: 13px; font-weight: 500; color: var(--text-secondary); }
+
+    /* INSTAGRAM GRID */
+    .insta-header {
+      display: flex; align-items: center; justify-content: space-between;
+      margin-bottom: 1rem; flex-wrap: wrap; gap: 10px;
+    }
+    .insta-handle {
+      display: inline-flex; align-items: center; gap: 8px;
+      font-size: 13px; color: #E1306C; font-weight: 500;
+      background: #fdf0f5; border: 0.5px solid #f5b8ce;
+      padding: 5px 14px; border-radius: 20px;
+      transition: background 0.15s;
+    }
+    .insta-handle:hover { background: #fce3ee; }
+    .insta-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+    }
+    .insta-thumb {
+      aspect-ratio: 1; border-radius: var(--radius-sm);
+      background: var(--bg-secondary);
+      overflow: hidden; position: relative;
+      cursor: pointer; transition: transform 0.2s;
+    }
+    .insta-thumb:hover { transform: scale(1.03); }
+    .insta-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .insta-thumb-overlay {
+      position: absolute; inset: 0;
+      background: rgba(0,0,0,0); display: flex;
+      align-items: center; justify-content: center;
+      transition: background 0.2s;
+    }
+    .insta-thumb:hover .insta-thumb-overlay { background: rgba(0,0,0,0.25); }
+    .insta-thumb-overlay span {
+      color: #fff; font-size: 22px;
+      opacity: 0; transition: opacity 0.2s;
+    }
+    .insta-thumb:hover .insta-thumb-overlay span { opacity: 1; }
+    .insta-placeholder {
+      width: 100%; height: 100%; display: flex;
+      align-items: center; justify-content: center;
+      font-size: 28px; color: var(--text-muted);
+      background: linear-gradient(135deg, #fdf0f5, #f5e6ff);
+    }
+
+    /* YOUTUBE */
+    .yt-card {
+      background: var(--bg-card); border: 0.5px solid var(--border);
+      border-radius: var(--radius); padding: 1.5rem;
+      display: flex; align-items: center; gap: 1.25rem;
+      text-decoration: none; color: inherit;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .yt-card:hover { transform: translateY(-3px); box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+    .yt-icon {
+      width: 56px; height: 56px; border-radius: 12px;
+      background: #FF0000; display: flex; align-items: center;
+      justify-content: center; flex-shrink: 0;
+    }
+    .yt-icon svg { width: 28px; height: 28px; fill: #fff; }
+    .yt-info-title { font-size: 15px; font-weight: 600; margin-bottom: 4px; }
+    .yt-info-sub { font-size: 13px; color: var(--text-secondary); }
+    .yt-cta {
+      margin-left: auto; font-size: 13px; color: #FF0000;
+      font-weight: 500; white-space: nowrap;
+    }
+
+    /* GET IN TOUCH */
+    .contact-section {
+      background: var(--bg); border-top: 0.5px solid var(--border);
+      padding: 3.5rem 0;
+    }
+    .contact-grid {
+      display: grid; grid-template-columns: 1fr 1.6fr;
+      gap: 2.5rem; align-items: start;
+    }
+    .contact-info-title {
+      font-family: 'DM Serif Display', serif; font-size: 26px; font-weight: 400;
+      margin-bottom: 10px;
+    }
+    .contact-info-sub {
+      font-size: 14px; color: var(--text-secondary); line-height: 1.75; margin-bottom: 1.5rem;
+    }
+    .contact-detail {
+      display: flex; align-items: center; gap: 10px;
+      font-size: 13px; color: var(--text-secondary); margin-bottom: 10px;
+    }
+    .contact-detail a { color: var(--blue); }
+    .contact-detail-icon {
+      width: 32px; height: 32px; border-radius: 8px;
+      background: var(--blue-light); display: flex; align-items: center;
+      justify-content: center; font-size: 15px; flex-shrink: 0;
+    }
+    .contact-form-card {
+      background: var(--bg-card); border: 0.5px solid var(--border);
+      border-radius: var(--radius); padding: 2rem;
+    }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .form-group { display: flex; flex-direction: column; gap: 6px; margin-bottom: 14px; }
+    .form-label { font-size: 12px; font-weight: 500; color: var(--text-secondary); }
+    .form-input, .form-textarea {
+      font-family: 'DM Sans', sans-serif; font-size: 14px;
+      padding: 9px 13px; border-radius: var(--radius-sm);
+      border: 0.5px solid var(--border); background: var(--bg);
+      color: var(--text-primary); outline: none; transition: border-color 0.2s;
+      width: 100%;
+    }
+    .form-input:focus, .form-textarea:focus { border-color: var(--blue); background: #fff; }
+    .form-textarea { resize: vertical; min-height: 110px; }
+    .form-submit {
+      width: 100%; padding: 10px; background: var(--blue); color: #fff;
+      border: none; border-radius: var(--radius-sm); font-size: 14px;
+      font-family: 'DM Sans', sans-serif; font-weight: 500;
+      cursor: pointer; transition: background 0.15s;
+    }
+    .form-submit:hover { background: var(--blue-dark); }
+    .form-submit:disabled { background: var(--blue-mid); cursor: not-allowed; }
+    .form-success {
+      display: none; text-align: center; padding: 1.5rem;
+      color: #0F6E56; background: #E6F7F2; border-radius: var(--radius-sm);
+      font-size: 14px; margin-top: 10px; border: 0.5px solid #a3d9c9;
+    }
+    .form-error {
+      display: none; text-align: center; padding: 10px;
+      color: #c0392b; background: #fdecea; border-radius: var(--radius-sm);
+      font-size: 13px; margin-top: 8px; border: 0.5px solid #f5aaaa;
+    }
+    @media (max-width: 640px) {
+      .contact-grid { grid-template-columns: 1fr; }
+      .form-row { grid-template-columns: 1fr; }
+    }
+
+    footer {
+      text-align: center; padding: 1.5rem; font-size: 12px;
+      color: var(--text-muted); background: var(--bg); border-top: 0.5px solid var(--border);
+    }
+
+    @media (max-width: 600px) {
+      .hero h1 { font-size: 26px; }
+      .nav-links { gap: 1rem; }
+      .metrics { grid-template-columns: repeat(2, 1fr); }
+      .modal-body { padding: 1.25rem 1.25rem 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <span class="nav-logo">Vijay Girish</span>
+    <div class="nav-links">
+      <a onclick="document.getElementById('about').scrollIntoView({behavior:'smooth'})">About</a>
+      <a onclick="document.getElementById('experience').scrollIntoView({behavior:'smooth'})">Experience</a>
+      <a onclick="document.getElementById('projects').scrollIntoView({behavior:'smooth'})">Projects</a>
+      <a onclick="document.getElementById('skills').scrollIntoView({behavior:'smooth'})">Skills</a>
+      <a onclick="document.getElementById('beyond').scrollIntoView({behavior:'smooth'})">Beyond Work</a>
+      <a onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="hero" id="about">
+  <div class="hero-inner">
+    <div class="avatar">VG</div>
+    <div>
+      <h1>Vijay Girish</h1>
+      <p class="subtitle">Senior Business Analyst · Product Analytics & Data-Driven Strategy</p>
+      <div class="tags">
+        <span class="tag">FMCG Analytics</span>
+        <span class="tag">Product Analytics</span>
+        <span class="tag">SQL · BigQuery</span>
+        <span class="tag">Power BI · DAX</span>
+        <span class="tag">BRD / FRD</span>
+        <span class="tag">Stakeholder Management</span>
+        <span class="tag">Program Management</span>
+      </div>
+      <div class="contact-strip">
+        <span class="contact-item">📍 Gurugram, Haryana</span>
+        <span class="contact-item">✉ <a href="/cdn-cgi/l/email-protection#efb986858e96dfd688869d869c87af88828e8683c18c8082"><span class="__cf_email__" data-cfemail="4b1d22212a327b722c22392238230b2c262a222765282426">[email&#160;protected]</span></a></span>
+        <span class="contact-item">📞 +91 96066 98869</span>
+        <span class="contact-item"><a href="https://www.linkedin.com/in/vijay-girish-1874a4104/" target="_blank" rel="noopener" style="color:var(--blue)">LinkedIn ↗</a></span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<div class="section-white">
+  <div class="container">
+    <section>
+      <p class="section-label">About</p>
+      <p style="color:var(--text-secondary);max-width:680px;line-height:1.8">
+        Senior Business Analyst with nearly 7 years of experience at the intersection of business analysis, product analytics, and data strategy across FMCG, pharma, and e-commerce. I turn ambiguous business problems into scalable analytics frameworks and measurable outcomes — from pharma business scale-up to building promotion optimization engines serving 13+ national FMCG clients.
+      </p>
+      <div class="metrics">
+        <div class="metric-card"><div class="metric-num">7 yrs</div><div class="metric-label">Industry experience</div></div>
+        <div class="metric-card"><div class="metric-num">13+</div><div class="metric-label">FMCG clients managed</div></div>
+        <div class="metric-card"><div class="metric-num">30+</div><div class="metric-label">Product features shipped</div></div>
+        <div class="metric-card"><div class="metric-num">~98%</div><div class="metric-label">SKU mapping accuracy</div></div>
+        <div class="metric-card"><div class="metric-num">~85%</div><div class="metric-label">Error rate reduction</div></div>
+      </div>
+    </section>
+  </div>
+</div>
+
+<!-- EXPERIENCE -->
+<div class="section-gray">
+  <div class="container">
+    <section id="experience">
+      <p class="section-label">Work Experience</p>
+      <div class="exp-list">
+        <div class="exp-card">
+          <div class="exp-header">
+            <div>
+              <div class="exp-title">Senior Business Analyst</div>
+              <div class="exp-company">ClicFlyer – Bodmas Technologies Pvt Ltd · Gurugram</div>
+            </div>
+            <span class="exp-date">Mar 2025 – Present</span>
+          </div>
+          <ul class="exp-bullets">
+            <li>Leading end-to-end analytics delivery for 13+ FMCG clients across Household, Personal Care, Health & Wellness, Dairy, and Packaged Goods segments</li>
+            <li>Built automated Power BI dashboards and BigQuery-based SQL pipelines enabling real-time, multi-client reporting</li>
+            <li>Developed Promo Optimizer, Offer Scoring (1–5 rating), and Dynamic Insights tools, improving decision-making speed by ~30%</li>
+            <li>Monitored campaign KPIs — Impressions, CTR, Redemption Rate, Sales Lift, ROI, Reach, and Sell-Through Rate</li>
+            <li>Designed SKU Master Tool improving data accuracy and downstream reporting reliability across clients</li>
+            <li>Mentored junior analysts, standardized QC processes, and established documentation frameworks</li>
+          </ul>
+        </div>
+        <div class="exp-card">
+          <div class="exp-header">
+            <div>
+              <div class="exp-title">Business Analyst</div>
+              <div class="exp-company">Udaan.com · Bangalore</div>
+            </div>
+            <span class="exp-date">Jan 2022 – Feb 2025</span>
+          </div>
+          <ul class="exp-bullets">
+            <li>Led end-to-end requirement gathering, translating business needs into detailed BRDs, FRDs, and functional specs</li>
+            <li>Built advanced SQL-based analytics tracking Pharma KPIs — GMV, Revenue, AOV, DOH, DRR, and Inventory Health</li>
+            <li>Engineered fuzzy logic-based SKU–vendor mapping tool achieving ~98% accuracy, replacing manual processes entirely</li>
+            <li>Designed Power BI dashboards with optimized data models and DAX; conducted UAT sessions for stakeholder sign-off</li>
+            <li>Contributed to pharma business scale-up from ~₹7 Cr to ₹12–13 Cr/month through market prioritization</li>
+          </ul>
+        </div>
+        <div class="exp-card">
+          <div class="exp-header">
+            <div>
+              <div class="exp-title">Product Associate</div>
+              <div class="exp-company">Udaan.com · Bangalore</div>
+            </div>
+            <span class="exp-date">Oct 2019 – Aug 2021</span>
+          </div>
+          <ul class="exp-bullets">
+            <li>Owned end-to-end delivery of 30+ product features from problem identification to GTM execution</li>
+            <li>Redesigned returns audit workflows through automation, reducing agent error rates by ~85%</li>
+            <li>Led cross-functional collaboration across engineering, design, and operations aligned to OKRs</li>
+          </ul>
+        </div>
+        <div class="exp-card">
+          <div class="exp-header">
+            <div>
+              <div class="exp-title">Product Manager</div>
+              <div class="exp-company">Mounty.co · Hyderabad</div>
+            </div>
+            <span class="exp-date">Aug 2021 – Oct 2021</span>
+          </div>
+          <ul class="exp-bullets">
+            <li>Authored Market Needs Documents to define product problems, solution hypotheses, and roadmap priorities</li>
+            <li>Conducted market research, competitive benchmarking, and user analysis to validate product opportunities</li>
+          </ul>
+        </div>
+        <div class="exp-card">
+          <div class="exp-header">
+            <div>
+              <div class="exp-title">Program Associate</div>
+              <div class="exp-company">Nestaway Technologies · Bangalore</div>
+            </div>
+            <span class="exp-date">Apr 2019 – Oct 2019</span>
+          </div>
+          <ul class="exp-bullets">
+            <li>Analyzed user pain points and operational inefficiencies to support product roadmap prioritization</li>
+            <li>Assisted in GTM execution and tracked key KPIs for feature releases</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>
+
+<!-- PROJECTS -->
+<div class="section-white">
+  <div class="container">
+    <section id="projects">
+      <p class="section-label">Key Projects</p>
+      <div class="proj-grid" id="proj-grid"></div>
+    </section>
+  </div>
+</div>
+
+<!-- SKILLS -->
+<div class="section-gray">
+  <div class="container">
+    <section id="skills">
+      <p class="section-label">Skills</p>
+      <div class="skills-grid">
+        <div class="skill-group">
+          <div class="skill-group-title">Data & Analytics</div>
+          <div class="skill-tags">
+            <span class="skill-tag">SQL (BigQuery)</span><span class="skill-tag">Power BI</span>
+            <span class="skill-tag">DAX</span><span class="skill-tag">Data Modeling</span>
+            <span class="skill-tag">Funnel Analysis</span><span class="skill-tag">KPI Design</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <div class="skill-group-title">Business Analysis</div>
+          <div class="skill-tags">
+            <span class="skill-tag">BRD / FRD</span><span class="skill-tag">Requirement Gathering</span>
+            <span class="skill-tag">AS-IS / TO-BE</span><span class="skill-tag">UAT</span>
+            <span class="skill-tag">Process Mapping</span><span class="skill-tag">Gap Analysis</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <div class="skill-group-title">Product & Strategy</div>
+          <div class="skill-tags">
+            <span class="skill-tag">Product Analytics</span><span class="skill-tag">GTM Strategy</span>
+            <span class="skill-tag">Roadmap Planning</span><span class="skill-tag">OKRs</span>
+            <span class="skill-tag">Feature Ownership</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <div class="skill-group-title">Tools & Soft Skills</div>
+          <div class="skill-tags">
+            <span class="skill-tag">Power Automate</span><span class="skill-tag">Microsoft Excel</span>
+            <span class="skill-tag">Stakeholder Management</span><span class="skill-tag">Client Liaison</span>
+            <span class="skill-tag">Team Mentoring</span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>
+
+<!-- BEYOND WORK -->
+<div class="section-white" id="beyond">
+  <div class="container">
+    <section>
+      <p class="section-label">Beyond Work</p>
+
+      <!-- Hobbies -->
+      <p style="font-size:14px;color:var(--text-secondary);margin-bottom:1.25rem;max-width:600px">
+        Outside of spreadsheets and dashboards, you'll find me chasing new experiences — from exploring cities to cooking something that may or may not turn out edible.
+      </p>
+      <div class="hobbies-grid">
+        <div class="hobby-card"><div class="hobby-emoji">✈️</div><div class="hobby-name">Travel</div></div>
+        <div class="hobby-card"><div class="hobby-emoji">📸</div><div class="hobby-name">Photography</div></div>
+        <div class="hobby-card"><div class="hobby-emoji">🏏</div><div class="hobby-name">Cricket</div></div>
+        <div class="hobby-card"><div class="hobby-emoji">🎮</div><div class="hobby-name">Gaming</div></div>
+        <div class="hobby-card"><div class="hobby-emoji">🍳</div><div class="hobby-name">Cooking</div></div>
+        <div class="hobby-card"><div class="hobby-emoji">🎵</div><div class="hobby-name">Music</div></div>
+      </div>
+
+      <!-- Instagram -->
+      <!-- <div style="margin-top:2.5rem">
+        <div class="insta-header">
+          <p class="section-label" style="margin-bottom:0">On Instagram</p>
+          <a class="insta-handle" href="https://www.instagram.com/vibewithbornnetfreak" target="_blank" rel="noopener">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#E1306C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.5" fill="#E1306C" stroke="none"/></svg>
+            @vibewithbornnetfreak
+          </a>
+        </div>
+        <div class="insta-grid">
+          <!6 placeholder tiles linking to Instagram — replace src with real photo URLs -->
+          <!-- <a cass="insta-thumb" href="https://www.instagram.com/p/C5JayWdhrUg/" target="_blank" rel="noopener"><img src="images/goa-sunset.jpg" alt="Varca Beach, Goa" /> -->
+  <!-- <div class="insta-thumb-overlay"><span>↗</span></div>
+</a>
+          </a>
+          <a class="insta-thumb" href="https://www.instagram.com/vibewithbornnetfreak" target="_blank" rel="noopener">
+            <div class="insta-placeholder">📸</div>
+            <div class="insta-thumb-overlay"><span>↗</span></div>
+          </a>
+          <a class="insta-thumb" href="https://www.instagram.com/vibewithbornnetfreak" target="_blank" rel="noopener">
+            <div class="insta-placeholder">🍳</div>
+            <div class="insta-thumb-overlay"><span>↗</span></div>
+          </a>
+          <a class="insta-thumb" href="https://www.instagram.com/vibewithbornnetfreak" target="_blank" rel="noopener">
+            <div class="insta-placeholder">🎵</div>
+            <div class="insta-thumb-overlay"><span>↗</span></div>
+          </a>
+          <a class="insta-thumb" href="https://www.instagram.com/vibewithbornnetfreak" target="_blank" rel="noopener">
+            <div class="insta-placeholder">🏏</div>
+            <div class="insta-thumb-overlay"><span>↗</span></div>
+          </a>
+          <a class="insta-thumb" href="https://www.instagram.com/vibewithbornnetfreak" target="_blank" rel="noopener">
+            <div class="insta-placeholder">🎮</div>
+            <div class="insta-thumb-overlay"><span>↗</span></div>
+          </a>
+        </div>
+        <p style="font-size:12px;color:var(--text-muted);margin-top:10px">
+          💡 <strong>To show real photos:</strong> right-click any Instagram post → Copy image address → paste as the <code>src</code> of the matching <code>&lt;img&gt;</code> tag in the HTML.
+        </p> -->
+      <!-- </div> > -->
+
+      <!-- YouTube -->
+      <div style="margin-top:2.5rem">
+        <p class="section-label">On YouTube</p>
+        <a class="yt-card" href="https://www.youtube.com/@VibewithBornnetfreak" target="_blank" rel="noopener">
+          <div class="yt-icon">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="#FF0000" style="fill:#FF0000"/></svg>
+          </div>
+          <div class="yt-info">
+            <div class="yt-info-title">Vibe with Bornnet Freak</div>
+            <div class="yt-info-sub">youtube.com/@VibewithBornnetfreak</div>
+          </div>
+          <span class="yt-cta">Visit Channel ↗</span>
+        </a>
+      </div>
+
+    </section>
+  </div>
+</div>
+
+<!-- GET IN TOUCH -->
+<div class="contact-section" id="contact">
+  <div class="container">
+    <p class="section-label">Get In Touch</p>
+    <div class="contact-grid">
+      <!-- Left: info -->
+      <div>
+        <div class="contact-info-title">Let's work together</div>
+        <p class="contact-info-sub">
+          I'm open to Senior BA, Program Manager, and Technical Program Manager roles —
+          in Gurugram, Kuala Lumpur, or remote. Feel free to drop a message and I'll get back
+          to you within 24 hours.
+        </p>
+        <div class="contact-detail">
+          <div class="contact-detail-icon">✉️</div>
+          <span><a href="mailto:Vijay09girish@gmail.com">Vijay09girish@gmail.com</a></span>
+        </div>
+        <div class="contact-detail">
+          <div class="contact-detail-icon">📞</div>
+          <span>+91 96066 98869</span>
+        </div>
+        <div class="contact-detail">
+          <div class="contact-detail-icon">📍</div>
+          <span>Gurugram, Haryana</span>
+        </div>
+        <div class="contact-detail">
+          <div class="contact-detail-icon">in</div>
+          <span><a href="https://www.linkedin.com/in/vijay-girish-1874a4104/" target="_blank" rel="noopener">LinkedIn Profile ↗</a></span>
+        </div>
+      </div>
+
+      <!-- Right: form -->
+      <div class="contact-form-card">
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label" for="cf-name">Your Name *</label>
+            <input class="form-input" id="cf-name" type="text" placeholder="Jane Smith" required />
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="cf-email">Your Email *</label>
+            <input class="form-input" id="cf-email" type="email" placeholder="jane@company.com" required />
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="cf-subject">Subject *</label>
+          <input class="form-input" id="cf-subject" type="text" placeholder="Job opportunity / Collaboration / Just saying hi" required />
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="cf-message">Message *</label>
+          <textarea class="form-textarea" id="cf-message" placeholder="Tell me about the role, project, or what you'd like to discuss..." required></textarea>
+        </div>
+        <button class="form-submit" id="cf-submit" onclick="submitContactForm()">Send Message →</button>
+        <div class="form-success" id="cf-success">
+          ✅ Message sent! I'll get back to you within 24 hours.
+        </div>
+        <div class="form-error" id="cf-error">
+          ⚠️ Something went wrong. Please email me directly at Vijay09girish@gmail.com
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer>© 2026 Vijay Girish · Built with GitHub Pages</footer>
+
+<!-- MODAL -->
+<div class="modal-backdrop" id="modal-backdrop" onclick="closeModal(event)">
+  <div class="modal" id="modal">
+    <button class="modal-close" onclick="closeModalBtn()">✕</button>
+    <div class="modal-banner" id="modal-banner"></div>
+    <div class="modal-body" id="modal-body"></div>
+  </div>
+</div>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+const projects = [
+  {
+    id: 0,
+    title: "Promotion Optimization & Pricing Platform",
+    tools: "SQL · Power BI · BigQuery",
+    snippet: "Data-driven pricing and promo platform for 13+ FMCG clients with star-based offer scoring.",
+    impact: "~30% faster decisions",
+    emoji: "📊",
+    bannerColors: ["#1a3a5c", "#185FA5", "#2176c4", "#0d3560"],
+    bgShapes: "blue",
+    overview: "Built an end-to-end data-driven pricing and promotion optimization solution to enhance campaign effectiveness and ROI for FMCG clients at ClicFlyer.",
+    problem: "FMCG clients lacked a standardized way to evaluate the performance of their promotional campaigns. Decisions were largely intuition-driven, leading to inconsistent ROI and slow iteration cycles.",
+    approach: [
+      "Built a recommendation engine leveraging historical sales trends and competitor benchmarking data",
+      "Designed a star-based (1–5) offer scoring framework to standardize campaign evaluation across all clients",
+      "Created dynamic Power BI dashboards connected to BigQuery pipelines for real-time KPI visibility",
+      "Automated data ingestion and transformation using SQL pipelines, eliminating manual reporting lag"
+    ],
+    kpis: ["Impressions", "CTR", "Redemption Rate", "Incremental Sales Lift", "ROI", "Reach", "Sell-Through Rate"],
+    metrics: [{ num: "13+", label: "FMCG clients" }, { num: "~30%", label: "Decision speed gain" }, { num: "1–5★", label: "Offer scoring scale" }, { num: "Real-time", label: "KPI visibility" }],
+    tags: ["SQL", "BigQuery", "Power BI", "DAX", "FMCG", "Promo Optimization", "Campaign Analytics"]
+  },
+  {
+    id: 1,
+    title: "SKU Master Automation Tool",
+    tools: "SQL · Power BI · Fuzzy Logic",
+    snippet: "Automated SKU-vendor mapping replacing manual processes with ~98% data accuracy.",
+    impact: "~98% accuracy",
+    emoji: "🔗",
+    bannerColors: ["#0d3d2e", "#0F6E56", "#1D9E75", "#085041"],
+    bgShapes: "teal",
+    overview: "Designed and engineered an automated SKU–vendor mapping system that replaced a slow, error-prone manual data standardization process at Udaan.com.",
+    problem: "Inconsistent SKU naming conventions across vendors caused significant downstream data quality issues — dashboards were unreliable, reports required constant manual correction, and analysts spent hours on reconciliation each week.",
+    approach: [
+      "Mapped the AS-IS process through stakeholder workshops with the data and ops teams to identify root causes",
+      "Designed a fuzzy logic-based matching algorithm in SQL to handle variations in SKU naming (abbreviations, typos, format differences)",
+      "Built validation rules and exception-handling logic to flag low-confidence matches for manual review",
+      "Integrated the tool into the existing BigQuery data pipeline so outputs flowed directly into Power BI reports",
+      "Conducted UAT sessions with stakeholders to validate match accuracy and refine scoring thresholds"
+    ],
+    kpis: ["Match Accuracy Rate", "Manual Intervention Rate", "Data Consistency Score", "Processing Time"],
+    metrics: [{ num: "~98%", label: "Match accuracy" }, { num: "↓ ~90%", label: "Manual effort" }, { num: "Multi-client", label: "Scale" }, { num: "Real-time", label: "Pipeline integration" }],
+    tags: ["SQL", "BigQuery", "Power BI", "Fuzzy Logic", "Data Quality", "UAT", "BRD/FRD"]
+  },
+  {
+    id: 2,
+    title: "Pharma Business Analytics System",
+    tools: "SQL · BigQuery · Power BI · DAX",
+    snippet: "Comprehensive KPI tracking system driving pharma scale-up from ₹7 Cr to ₹12–13 Cr/month.",
+    impact: "₹7 Cr → ₹12–13 Cr/mo",
+    emoji: "💊",
+    bannerColors: ["#3a1a5c", "#533AB7", "#7F77DD", "#3C3489"],
+    bgShapes: "purple",
+    overview: "Built an end-to-end analytics system for Udaan.com's pharma vertical that provided leadership with the data clarity needed to make market prioritization decisions and scale the business.",
+    problem: "The pharma vertical at Udaan lacked consolidated visibility into key health metrics. Disparate data sources, inconsistent definitions, and no single source of truth made it impossible to identify underperforming markets or allocate resources strategically.",
+    approach: [
+      "Conducted requirement gathering sessions with business heads, category managers, and the data team to define KPI taxonomy",
+      "Authored detailed BRDs and FRDs documenting metric definitions, data sources, refresh frequencies, and access controls",
+      "Wrote complex SQL queries in BigQuery to compute GMV, Revenue, AOV, Days of Health (DOH), Daily Run Rate (DRR), and Inventory Health",
+      "Built a multi-page Power BI dashboard with drill-down capability from national → state → city → distributor level",
+      "Defined and implemented DAX measures for MoM/WoW trend analysis and exception alerting",
+      "Coordinated UAT with stakeholders across business, product, and engineering teams before go-live"
+    ],
+    kpis: ["GMV", "Revenue", "AOV", "Days of Health (DOH)", "Daily Run Rate (DRR)", "Inventory Health"],
+    metrics: [{ num: "₹7 Cr", label: "Starting revenue" }, { num: "₹12–13 Cr", label: "Monthly peak revenue" }, { num: "6 KPIs", label: "Core metrics tracked" }, { num: "National", label: "Coverage scope" }],
+    tags: ["SQL", "BigQuery", "Power BI", "DAX", "BRD/FRD", "UAT", "Pharma", "KPI Design"]
+  },
+  {
+    id: 3,
+    title: "Returns Audit Workflow Automation",
+    tools: "Product Delivery · SQL · Process Automation",
+    snippet: "Automated returns audit reducing agent error rates by ~85% at Udaan.com.",
+    impact: "~85% fewer errors",
+    emoji: "⚙️",
+    bannerColors: ["#3d1a0d", "#993C1D", "#D85A30", "#71280f"],
+    bgShapes: "coral",
+    overview: "Led the redesign of Udaan.com's returns audit process — one of the most operationally complex and error-prone workflows — by introducing automation to replace high-touch manual agent decisions.",
+    problem: "The returns audit workflow required agents to manually review and categorize hundreds of return requests daily. This resulted in ~30–40% error rates, SLA breaches, inconsistent decisions, and significant impact on seller trust and logistics costs.",
+    approach: [
+      "Conducted deep-dive process analysis across the returns lifecycle — from seller initiation to warehouse receipt and credit issuance",
+      "Identified 12 distinct decision nodes in the workflow and categorized them by automation potential and risk level",
+      "Authored a comprehensive BRD defining automation rules, exception triggers, and escalation protocols",
+      "Collaborated with engineering to scope and prioritize the build; ran sprint-by-sprint delivery coordination",
+      "Defined SQL-based audit queries to monitor post-launch error rates and catch edge-case failures",
+      "Conducted UAT across agent teams and business owners before rollout; ran phased deployment with a fallback plan"
+    ],
+    kpis: ["Agent Error Rate", "Returns Resolution Time", "SLA Adherence", "Escalation Rate", "Seller CSAT"],
+    metrics: [{ num: "~85%", label: "Error rate reduction" }, { num: "↓ Sig.", label: "Resolution time" }, { num: "30+", label: "Features shipped" }, { num: "Phased", label: "Rollout approach" }],
+    tags: ["Product Delivery", "Process Automation", "SQL", "BRD/FRD", "UAT", "Cross-functional", "OKRs"]
+  },
+  {
+    id: 4,
+    title: "MedConnect – Doctor Discovery Platform",
+    tools: "Product Strategy · UX · PWA · Capacitor",
+    snippet: "Personal venture: a Zomato-style doctor discovery & booking platform built from scratch.",
+    impact: "Full product build",
+    emoji: "🏥",
+    bannerColors: ["#0a3040", "#185FA5", "#0F6E56", "#0a2535"],
+    bgShapes: "multi",
+    overview: "MedConnect is a personal product venture — a Zomato/Swiggy-style doctor discovery and appointment booking platform designed to simplify how patients find, evaluate, and book healthcare providers.",
+    problem: "Finding the right doctor in India is frustratingly fragmented. Patients rely on word-of-mouth or generic listing sites with poor UX, no real ratings, and zero booking capability. Doctors lack a low-cost digital presence and patient pipeline tool.",
+    approach: [
+      "Defined the full product vision, personas (patients + doctors + admins), and go-to-market strategy",
+      "Designed and prototyped all four surfaces: Patient App, Doctor App, Doctor Website, and Admin Dashboard",
+      "Built production-ready UI using Vite + Capacitor as a PWA with CI/CD pipeline via GitHub Actions",
+      "Designed consumer-grade UX inspired by super-app patterns — search, filter, ratings, booking flows",
+      "Authored BRDs and FRDs for core modules: doctor onboarding, slot management, appointment lifecycle, and review system"
+    ],
+    kpis: ["Booking Conversion Rate", "Doctor Onboarding Time", "Search-to-Book Funnel", "Rating Coverage"],
+    metrics: [{ num: "4", label: "Product surfaces" }, { num: "PWA", label: "Tech approach" }, { num: "CI/CD", label: "GitHub Actions pipeline" }, { num: "0→1", label: "Full build ownership" }],
+    tags: ["Product Strategy", "UX Design", "Vite", "Capacitor", "PWA", "BRD/FRD", "GTM", "Healthcare"]
+  }
+];
+
+// SVG backgrounds for banners
+function bannerSVG(type, colors) {
+  const c = colors;
+  if (type === "blue") return `<svg viewBox="0 0 400 160" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice"><rect width="400" height="160" fill="${c[0]}"/><circle cx="320" cy="20" r="90" fill="${c[1]}" opacity="0.5"/><circle cx="60" cy="140" r="70" fill="${c[2]}" opacity="0.4"/><rect x="150" y="50" width="120" height="3" fill="${c[3]}" opacity="0.3" rx="2"/><rect x="130" y="65" width="80" height="3" fill="${c[3]}" opacity="0.2" rx="2"/></svg>`;
+  if (type === "teal") return `<svg viewBox="0 0 400 160" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice"><rect width="400" height="160" fill="${c[0]}"/><polygon points="400,0 400,160 200,160" fill="${c[1]}" opacity="0.4"/><circle cx="80" cy="40" r="60" fill="${c[2]}" opacity="0.35"/><rect x="0" y="120" width="400" height="2" fill="${c[3]}" opacity="0.3"/></svg>`;
+  if (type === "purple") return `<svg viewBox="0 0 400 160" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice"><rect width="400" height="160" fill="${c[0]}"/><circle cx="200" cy="80" r="100" fill="${c[1]}" opacity="0.35"/><circle cx="350" cy="160" r="80" fill="${c[2]}" opacity="0.3"/><circle cx="50" cy="0" r="60" fill="${c[3]}" opacity="0.25"/></svg>`;
+  if (type === "coral") return `<svg viewBox="0 0 400 160" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice"><rect width="400" height="160" fill="${c[0]}"/><polygon points="0,0 200,160 0,160" fill="${c[1]}" opacity="0.4"/><polygon points="400,0 400,160 180,0" fill="${c[2]}" opacity="0.3"/><circle cx="320" cy="30" r="50" fill="${c[3]}" opacity="0.3"/></svg>`;
+  return `<svg viewBox="0 0 400 160" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice"><rect width="400" height="160" fill="${c[0]}"/><circle cx="100" cy="50" r="80" fill="${c[1]}" opacity="0.4"/><circle cx="300" cy="120" r="70" fill="${c[2]}" opacity="0.35"/><circle cx="350" cy="20" r="50" fill="${c[3]}" opacity="0.3"/></svg>`;
+}
+
+// Render cards
+const grid = document.getElementById('proj-grid');
+projects.forEach(p => {
+  const card = document.createElement('div');
+  card.className = 'proj-card';
+  card.onclick = () => openModal(p.id);
+  card.innerHTML = `
+    <div class="proj-banner">
+      ${bannerSVG(p.bgShapes, p.bannerColors)}
+      <div class="proj-banner-icon">${p.emoji}</div>
+    </div>
+    <div class="proj-body">
+      <div class="proj-title">${p.title}</div>
+      <div class="proj-tools">${p.tools}</div>
+      <div class="proj-snippet">${p.snippet}</div>
+      <span class="proj-impact-pill">${p.impact}</span>
+      <div class="proj-cta">View full overview</div>
+    </div>
+  `;
+  grid.appendChild(card);
+});
+
+function openModal(id) {
+  const p = projects[id];
+  const backdrop = document.getElementById('modal-backdrop');
+  const banner = document.getElementById('modal-banner');
+  const body = document.getElementById('modal-body');
+
+  banner.innerHTML = `${bannerSVG(p.bgShapes, p.bannerColors)}<div class="modal-banner-icon">${p.emoji}</div>`;
+
+  body.innerHTML = `
+    <div class="modal-title">${p.title}</div>
+    <div class="modal-tools">${p.tools}</div>
+
+    <div class="modal-section-title">Overview</div>
+    <p class="modal-text">${p.overview}</p>
+
+    <div class="modal-section-title">The Problem</div>
+    <p class="modal-text">${p.problem}</p>
+
+    <div class="modal-section-title">Approach</div>
+    <ul class="modal-list">
+      ${p.approach.map(a => `<li>${a}</li>`).join('')}
+    </ul>
+
+    <div class="modal-section-title">KPIs Tracked</div>
+    <div class="modal-tags">${p.kpis.map(k => `<span class="modal-tag">${k}</span>`).join('')}</div>
+
+    <div class="modal-section-title">Key Outcomes</div>
+    <div class="modal-metrics">
+      ${p.metrics.map(m => `<div class="modal-metric"><div class="modal-metric-num">${m.num}</div><div class="modal-metric-label">${m.label}</div></div>`).join('')}
+    </div>
+
+    <div class="modal-section-title">Technologies & Skills</div>
+    <div class="modal-tags">${p.tags.map(t => `<span class="modal-tag">${t}</span>`).join('')}</div>
+  `;
+
+  backdrop.classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeModal(e) {
+  if (e.target === document.getElementById('modal-backdrop')) {
+    document.getElementById('modal-backdrop').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+}
+
+function closeModalBtn() {
+  document.getElementById('modal-backdrop').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+async function submitContactForm() {
+  const name    = document.getElementById('cf-name').value.trim();
+  const email   = document.getElementById('cf-email').value.trim();
+  const subject = document.getElementById('cf-subject').value.trim();
+  const message = document.getElementById('cf-message').value.trim();
+  const btn     = document.getElementById('cf-submit');
+  const success = document.getElementById('cf-success');
+  const error   = document.getElementById('cf-error');
+
+  if (!name || !email || !subject || !message) {
+    alert('Please fill in all fields before sending.');
+    return;
+  }
+
+  btn.disabled = true;
+  btn.textContent = 'Sending…';
+  success.style.display = 'none';
+  error.style.display   = 'none';
+
+  // ── Formspree: replace YOUR_FORM_ID with the ID from formspree.io ──
+  // Sign up free at https://formspree.io → New Form → copy the 8-char ID
+  // e.g. if your endpoint is https://formspree.io/f/abcd1234  →  use "abcd1234"
+  const FORMSPREE_ID = 'mkoknzzp';
+
+  try {
+    const res = await fetch(`https://formspree.io/f/${FORMSPREE_ID}`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body: JSON.stringify({ name, email, _subject: subject, message })
+    });
+
+    if (res.ok) {
+      success.style.display = 'block';
+      document.getElementById('cf-name').value    = '';
+      document.getElementById('cf-email').value   = '';
+      document.getElementById('cf-subject').value = '';
+      document.getElementById('cf-message').value = '';
+    } else {
+      error.style.display = 'block';
+    }
+  } catch (err) {
+    error.style.display = 'block';
+  } finally {
+    btn.disabled = false;
+    btn.textContent = 'Send Message →';
+  }
+}
+</script>
+</body>
+</html>
